@@ -413,3 +413,43 @@ footer {
   transform-origin: 8vw 10vh;
   box-shadow: -2vmin 0 1.1429095205166608vmin currentColor;
 }
+
+/* Media query pour écrans de 24 pouces */
+@media (max-width: 1920px) {
+  h1 {
+    font-size: 5em;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(8, 9em);
+    grid-gap: 2em;
+  }
+
+  .grid-item {
+    width: 9em;
+    height: 14em;
+  }
+
+  .mini-games {
+    flex-direction: column;
+  }
+
+  .grid-game {
+    width: 14em;
+    height: 25em;
+  }
+
+  .grid-game .front {
+    font-size: 2.5em;
+  }
+
+  .grid-game .back {
+    font-size: 1.8em;
+  }
+
+  .death-wall-buttons button {
+    width: 7em;
+    height: 3em;
+    font-size: 1.3em;
+  }
+}
