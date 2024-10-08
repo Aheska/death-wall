@@ -29,11 +29,6 @@ body {
   height: 100vh;
 }
 
-/* Gestion des haut de page */
-header {
-  margin-top: 4em;
-}
-
 h1 {
   color: var(--color-title);
   font-size: 6em;
@@ -46,14 +41,16 @@ em {
   color: var(--color-secondary);
 }
 
-/* Gestion des bas de page */
-footer {
-  margin-bottom: 4em;
-}
-
 /* Button(s) death-wall */
 .death-wall-buttons {
+  padding: 2em 0 2em 0;
+  display: flex;
   justify-content: center;
+}
+
+/* Titres */
+.title {
+  padding: 2em 0 2em 0;
 }
 
 .death-wall-buttons button {
@@ -171,6 +168,43 @@ footer {
 .grid-game .back {
   font-size: 2.0em;
 }
+
+/* Media query pour écrans de 24 pouces */
+@media (max-width: 1920px) {
+  h1 {
+    font-size: 4.5em;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(9, 10em);
+    grid-gap: 2.5em;
+  }
+
+  .grid-item {
+    width: 9.5em;
+    height: 13em;
+  }
+
+  .grid-game {
+    width: 15em;
+    height: 27em;
+  }
+
+  .grid-game .front {
+    font-size: 2.5em;
+  }
+
+  .grid-game .back {
+    font-size: 1.8em;
+  }
+
+  .death-wall-buttons button {
+    width: 7em;
+    height: 3em;
+    font-size: 1.3em;
+  }
+}
+
 
 /* Background */
 .bg {
@@ -412,44 +446,4 @@ footer {
   animation-delay: -55s;
   transform-origin: 8vw 10vh;
   box-shadow: -2vmin 0 1.1429095205166608vmin currentColor;
-}
-
-/* Media query pour écrans de 24 pouces */
-@media (max-width: 1920px) {
-  h1 {
-    font-size: 5em;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(9, 7em);
-    grid-gap: 1.8em;
-  }
-
-  .grid-item {
-    width: 8em;
-    height: 13em;
-  }
-
-  .mini-games {
-    flex-direction: column;
-  }
-
-  .grid-game {
-    width: 12em;
-    height: 24em;
-  }
-
-  .grid-game .front {
-    font-size: 2em;
-  }
-
-  .grid-game .back {
-    font-size: 1.4em;
-  }
-
-  .death-wall-buttons button {
-    width: 6em;
-    height: 2.5em;
-    font-size: 1.3em;
-  }
 }
