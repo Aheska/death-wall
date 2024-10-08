@@ -31,7 +31,7 @@ body {
 
 /* Gestion des haut de page */
 header {
-  margin-top: 50px;
+  margin-top: 4em;
 }
 
 h1 {
@@ -48,7 +48,7 @@ em {
 
 /* Gestion des bas de page */
 footer {
-  margin-bottom: 50px;
+  margin-bottom: 4em;
 }
 
 /* Button(s) death-wall */
@@ -59,8 +59,8 @@ footer {
 .death-wall-buttons button {
   background-color: var(--color-principal);
   color: var(--color-text);
-  width: 200px;
-  height: 80px;
+  width: 8.3em;
+  height: 3.5em;
   font-family: "Protest Revolution", sans-serif;
   font-size: 1.5em;
   border: none;
@@ -70,12 +70,12 @@ footer {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(9, 180px);
-  grid-gap: 50px;
+  grid-gap: 2.5em;
 }
 
 .grid-item {
-  width: 180px;
-  height: 250px;
+  width: 11em;
+  height: 16em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,8 +95,8 @@ footer {
 }
 
 .grid-item .back img {
-  width: 50px;
-  height: 50px;
+  width: 2em;
+  height: 2em;
   margin-bottom: 10px;
   object-fit: contain;
 }
@@ -144,15 +144,15 @@ footer {
 /* Button(s) mini-games */
 .mini-games-buttons {
   display: flex;
-  gap: 50px;
+  gap: 2.5em;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 4em;
 }
 
 /* Grille mini-games */
 .grid-game {
-  width: 250px;
-  height: 550px;
+  width: 16em;
+  height: 30em;
   display: flex;
   justify-content: center;
   align-items: center;
