@@ -421,7 +421,7 @@ footer {
   }
 
   .grid-container {
-    grid-template-columns: repeat(8, 7em);
+    grid-template-columns: repeat(9, 7em);
     grid-gap: 1.8em;
   }
 
