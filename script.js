@@ -47,7 +47,10 @@ const phrasesWithBonus = [
 { phrase: "Tarot obligatoire, et vous faites un tarot russe", bonus: "Annulation de 2 cases au choix" },
 { phrase: "Une chasse maudite à faire", bonus: "-1 case au prochain tirage" },
 { phrase: "Challenge le fantôme durant une chasse", bonus: "-1 case au prochain tirage" },
-{ phrase: "Ranger tout le matériel dans le camion correctement avant de partir ", bonus: "Annulation d'une case au choix" },
+{ phrase: "Ranger tout le matériel dans le camion correctement avant de partir", bonus: "Annulation d'une case au choix" },
+{ phrase: "Vous passez d'une base pro à une base cauchemar", bonus: "Annulation de 2 cases au choix" },
+{ phrase: "Une voyelle dans le nom = un objet de preuve possible", bonus: "Annulation d'une case au choix" },
+{ phrase: "Faire 10 photos 3 étoiles sans en rater une seule", bonus: "Annulation d'une case au choix" },
 ];
 
 // Liste des objets Phasmophobia
