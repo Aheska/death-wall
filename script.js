@@ -6,8 +6,8 @@ const phrasesWithImages = [
   { phrase: "-1 preuve", image: "images/print.png" },
   { phrase: "Photo fantôme obligatoire", image: "images/ghost.png" },
   { phrase: "Os obligatoire", image: "images/bone.png" },
-  { phrase: "3 objets baissent d'un tier", image: "images/ghost.png" },
-  { phrase: "3 objets baissent d'un tier", image: "images/ghost.png" },
+  { phrase: "3 objets baissent d'un tier", image: "images/repairing.png" },
+  { phrase: "3 objets baissent d'un tier", image: "images/reparing.png" },
   { phrase: "-2 encens", image: "images/smudge.png" },
   { phrase: "Tout les objets sont à un seul exemplaire", image: "images/one.png" },
   { phrase: "Utilisation de l'objet maudit obligatoire", image: "images/cursed.png" },
@@ -47,7 +47,6 @@ const phrasesWithBonus = [
 { phrase: "Tarot obligatoire, et vous faites un tarot russe", bonus: "Annulation de 2 cases au choix" },
 { phrase: "Une chasse maudite à faire", bonus: "-1 case au prochain tirage" },
 { phrase: "Challenge le fantôme durant une chasse", bonus: "-1 case au prochain tirage" },
-{ phrase: "Le fantôme doit souffler 3 bougies uniquement en chasse", bonus: "Annulation d'une case au choix" },
 { phrase: "Ranger tout le matériel dans le camion correctement avant de partir ", bonus: "Annulation d'une case au choix" },
 ];
 
@@ -97,6 +96,7 @@ for (let i = 0; i < 27; i++) {
   image.alt = "Image associée à " + phrasesWithImages[i].phrase;
 
   const phraseText = document.createElement('div');
+  phraseText.classList.add('text');
   phraseText.innerText = phrasesWithImages[i].phrase;
 
   const number = document.createElement('div');
@@ -110,21 +110,32 @@ for (let i = 0; i < 27; i++) {
   gridItem.appendChild(front);
   gridItem.appendChild(back);
 
-  gridItem.addEventListener('click', function() {
-      gridItem.classList.add('flipped');
-  });
-
   gridContainer.appendChild(gridItem);
 }
 
+document.querySelectorAll('.grid-item').forEach((card) => {
+card.addEventListener('click', function () {
+  if (!this.classList.contains('flipped')) {
+    this.classList.add('flipped');
+  } else if (!this.classList.contains('canceled')) {
+    this.classList.add('canceled');
+  }
+});
+});
+
 // Réléver les cartes unes à unes
-function revelerCartes(){
-  const cartes = document.querySelectorAll('.grid-item');
-  cartes.forEach((card, index) => {
-      setTimeout(() => {
-        card.classList.add('flipped');
-      }, index * 300);
-    });
+function revelerCartes() {
+const cartes = document.querySelectorAll('.grid-item');
+let delay = 0;
+
+cartes.forEach((carte) => {
+  if (!carte.classList.contains('flipped')) {
+    setTimeout(() => {
+      carte.classList.add('flipped');
+    }, delay);
+    delay += 300; // Délai entre chaque carte
+  }
+});
 }
 
 document.getElementById('reveal').addEventListener('click', revelerCartes);

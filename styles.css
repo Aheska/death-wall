@@ -1,8 +1,7 @@
 :root {
   --color-principal: #2c2c2c;
   --color-secondary: #691212;
-  --color-title: #dbdada;
-  --color-text: rgb(185, 185, 185);
+  --color-text: #dbdada;
 }
 
 body {
@@ -30,8 +29,8 @@ body {
 }
 
 h1 {
-  color: var(--color-title);
-  font-size: 6em;
+  color: var(--color-text);
+  font-size: 2.6em;
   text-align: center;
   font-weight: bold;
   margin: 0;
@@ -41,38 +40,21 @@ em {
   color: var(--color-secondary);
 }
 
-/* Button(s) death-wall */
-.death-wall-buttons {
-  padding: 2em 0 2em 0;
-  display: flex;
-  justify-content: center;
-}
-
 /* Titres */
 .title {
-  padding: 2em 0 2em 0;
-}
-
-.death-wall-buttons button {
-  background-color: var(--color-principal);
-  color: var(--color-text);
-  width: 8.3em;
-  height: 3.5em;
-  font-family: "Protest Revolution", sans-serif;
-  font-size: 1.5em;
-  border: none;
+  padding: 1em 0 1em 0;
 }
 
 /* Grille death-wall */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(9, 11em);
-  grid-gap: 2.5em;
+  grid-template-columns: repeat(9, 1fr);
+  grid-gap: 1rem;
 }
 
 .grid-item {
-  width: 11em;
-  height: 16em;
+  width: 5.6em;
+  height: 7.6em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,28 +65,38 @@ em {
 }
 
 .grid-item .front {
-  font-size: 2.2em;
+  font-size: 1.2em;
 }
 
 .grid-item .back .backnumber {
+  font-size: 0.9em;
   position: fixed;
   top: 2%;
 }
 
 .grid-item .back img {
-  width: 2em;
-  height: 2em;
+  width: 1.3em;
+  height: 1.3em;
   margin-bottom: 10px;
   object-fit: contain;
 }
 
+/* Modification des tailles pour les faces arrières dans grid-item */
+.grid-item .back .text {
+  font-size: 0.7em;
+  padding: 0.1em;
+}
+
 /* Rotation des items */
-.grid-item.flipped, .grid-game.flipped {
+.grid-item.flipped,
+.grid-game.flipped {
   transform: rotateY(180deg);
 }
 
 /* Gestion apparence :hover */
-.grid-item .front:hover, button:hover, .grid-game .front:hover {
+.grid-item .front:hover,
+button:hover,
+.grid-game .front:hover {
   transform: scale(1.1);
   transition: transform 0.5s;
   color: var(--color-secondary);
@@ -130,12 +122,17 @@ em {
 .grid-item .back,
 .grid-game .back {
   transform: rotateY(180deg);
-  font-size: 1.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+/* CSS d'annulation de case */
+.grid-item.canceled .back {
+  background-color: var(--color-secondary);
+  transform: rotateY(180deg) rotateZ(-2deg);
 }
 
 /* Button(s) mini-games */
@@ -148,8 +145,8 @@ em {
 
 /* Grille mini-games */
 .grid-game {
-  width: 16em;
-  height: 30em;
+  width: 9em;
+  height: 18em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,49 +159,30 @@ em {
 
 /* Modification des tailles pour les faces arrières dans mini-games */
 .grid-game .front {
-  font-size: 3.2em;
+  font-size: 1.5em;
 }
 
 .grid-game .back {
-  font-size: 2.0em;
+  font-size: 1em;
+  padding: 0.1em;
 }
 
-/* Media query pour écrans de 24 pouces */
-@media (max-width: 1920px) {
-  h1 {
-    font-size: 4.5em;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(9, 9.5em);
-    grid-gap: 2em;
-  }
-
-  .grid-item {
-    width: 9.2em;
-    height: 12em;
-  }
-
-  .grid-game {
-    width: 15em;
-    height: 27em;
-  }
-
-  .grid-game .front {
-    font-size: 2.5em;
-  }
-
-  .grid-game .back {
-    font-size: 1.8em;
-  }
-
-  .death-wall-buttons button {
-    width: 7em;
-    height: 3em;
-    font-size: 1.3em;
-  }
+/* Button(s) death-wall */
+.death-wall-buttons {
+  padding: 1em 0 1em 0;
+  display: flex;
+  justify-content: center;
 }
 
+.death-wall-buttons button {
+  background-color: var(--color-principal);
+  color: var(--color-text);
+  width: 8em;
+  height: 3.5em;
+  font-family: "Protest Revolution", sans-serif;
+  font-size: 1em;
+  border: none;
+}
 
 /* Background */
 .bg {
@@ -215,31 +193,54 @@ em {
   bottom: -50%;
   width: 200vw;
   height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background: transparent
+    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
   background-repeat: repeat;
-  animation: bg-animation .2s infinite;
-  opacity: .9;
+  animation: bg-animation 0.2s infinite;
+  opacity: 0.9;
   visibility: visible;
   z-index: -1;
 }
 
 @keyframes bg-animation {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-5%,-5%) }
-    20% { transform: translate(-10%,5%) }
-    30% { transform: translate(5%,-10%) }
-    40% { transform: translate(-5%,15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
 }
 
 @keyframes move {
   100% {
-      transform: translate3d(0, 0, 1px) rotate(360deg);
+    transform: translate3d(0, 0, 1px) rotate(360deg);
   }
 }
 
@@ -265,7 +266,6 @@ em {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-
 
 .background span:nth-child(0) {
   color: #626061;
@@ -446,4 +446,98 @@ em {
   animation-delay: -55s;
   transform-origin: 8vw 10vh;
   box-shadow: -2vmin 0 1.1429095205166608vmin currentColor;
+}
+
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 4.5em;
+  }
+
+  .grid-item {
+    width: 7.5em;
+    height: 9.6em;
+  }
+
+  .grid-item .front {
+    font-size: 1.7em;
+  }
+
+  .grid-item .back .backnumber {
+    font-size: 1em;
+  }
+
+  .grid-item .back img {
+    width: 1.6em;
+    height: 1.6em;
+  }
+
+  .grid-item .back .text {
+    font-size: 1em;
+  }
+
+  .grid-game {
+    width: 11em;
+    height: 19em;
+  }
+
+  .grid-game .front {
+    font-size: 1.8em;
+  }
+
+  .grid-game .back {
+    font-size: 1.2em;
+  }
+
+  .death-wall-buttons button {
+    width: 9em;
+    height: 3.5em;
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 6em;
+  }
+
+  .grid-item {
+    width: 10.5em;
+    height: 14.6em;
+  }
+
+  .grid-item .front {
+    font-size: 2.5em;
+  }
+
+  .grid-item .back .backnumber {
+    font-size: 1.3em;
+  }
+
+  .grid-item .back img {
+    width: 2.2em;
+    height: 2.2em;
+  }
+
+  .grid-item .back .text {
+    font-size: 1.5em;
+  }
+
+  .grid-game {
+    width: 18em;
+    height: 30em;
+  }
+
+  .grid-game .front {
+    font-size: 2.5em;
+  }
+
+  .grid-game .back {
+    font-size: 2em;
+  }
+
+  .death-wall-buttons button {
+    width: 11em;
+    height: 4em;
+    font-size: 1em;
+  }
 }
