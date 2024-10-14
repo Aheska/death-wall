@@ -7,7 +7,7 @@ const phrasesWithImages = [
   { phrase: "Photo fantôme obligatoire", image: "images/ghost.png" },
   { phrase: "Os obligatoire", image: "images/bone.png" },
   { phrase: "3 objets baissent d'un tier", image: "images/repairing.png" },
-  { phrase: "3 objets baissent d'un tier", image: "images/reparing.png" },
+  { phrase: "3 objets baissent d'un tier", image: "images/repairing.png" },
   { phrase: "-2 encens", image: "images/smudge.png" },
   { phrase: "Tout les objets sont à un seul exemplaire", image: "images/one.png" },
   { phrase: "Utilisation de l'objet maudit obligatoire", image: "images/cursed.png" },
