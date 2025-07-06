@@ -539,23 +539,25 @@ em {
 }
 
 .grid-item .back .new-tag {
-  display: none;
   position: absolute;
-  top: 0.4em;
-  right: 0.5em;
-  background: #e74c3c;
-  color: #fff;
-  font-size: 0.8em;
+  top: 6px;
+  right: 6px;
+  background-color: var(--color-secondary);
+  color: white;
+  font-size: 0.55em;
   font-weight: bold;
-  padding: 0.2em 0.7em;
-  border-radius: 1em;
+  padding: 2px 5px;
+  border-radius: 4px;
   z-index: 2;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  letter-spacing: 0.05em;
+  text-transform: uppercase;
   pointer-events: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: opacity 0.2s ease;
 }
 
-/* Affiche le tag uniquement quand la carte est retournée */
 .grid-item.flipped .back .new-tag {
-  display: block;
+  opacity: 1;
 }
