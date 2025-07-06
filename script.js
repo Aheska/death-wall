@@ -26,12 +26,18 @@ const phrasesWithImages = [
   { phrase: "-25% de santé mentale", image: "images/sanity.png" },
   { phrase: "-25% de santé mentale", image: "images/sanity.png" },
   { phrase: "-25% de santé mentale", image: "images/sanity.png" },
-  { phrase: "Bloquer une chasse par un crucifix", image: "images/crucifix.png" },
-  { phrase: "Avoir le fantôme qui souffle une bougie", image: "images/candle.png" },
   { phrase: "+25% de vitesse pour le fantôme", image: "images/speed.png" },
   { phrase: "+25% de vitesse pour le fantôme", image: "images/speed.png" },
   { phrase: "Lumières interdites", image: "images/dark.png" },
-  { phrase: "Photo fantôme translucide obligatoire", image: "images/dark.png", new: true },
+  { phrase: "Photo fantôme translucide obligatoire", image: "images/ghost.png" },
+  { phrase: "Photo fantôme ombre obligatoire", image: "images/ghost.png" },
+  { phrase: "Capter une bougie soufflée par vidéo et son", image: "images/action.png" },
+  { phrase: "Prendre en vidéo un crucifix brûlé", image: "images/camera.png" },
+  { phrase: "Prendre en vidéo un objet lancé", image: "images/camera.png" },
+  { phrase: "Prendre en vidéo une lumière se briser", image: "images/camera.png" },
+  { phrase: "Capter un rire", image: "images/sound-system.png" },
+  { phrase: "Capter une phrase", image: "images/sound-system.png" },
+  { phrase: "Capter un chant", image: "images/sound-system.png" },
 ];
 
 // Liste des défis du tarot et leurs bonus
@@ -94,13 +100,6 @@ for (let i = 0; i < 27; i++) {
 
   const back = document.createElement('div');
   back.classList.add('back');
-
-  if (phrasesWithImages[i].new) {
-    const newTag = document.createElement('div');
-    newTag.classList.add('new-tag');
-    newTag.innerText = "Nouveau";
-    back.appendChild(newTag);
-  }
 
   const image = document.createElement('img');
   image.src = phrasesWithImages[i].image;
