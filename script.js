@@ -90,7 +90,7 @@ shuffleArray(phrasesWithImages);
 // Création de la grille
 const gridContainer = document.getElementById("grid");
 
-for (let i = 0; i < phrasesWithImages.length; i++) {
+for (let i = 0; i < 27; i++) {
   const gridItem = document.createElement('div');
   gridItem.classList.add('grid-item');
 
