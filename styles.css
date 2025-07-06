@@ -558,6 +558,10 @@ em {
   transition: opacity 0.2s ease;
 }
 
+.grid-item .back {
+  position: relative;
+}
+
 .grid-item.flipped .back .new-tag {
   opacity: 1;
 }
