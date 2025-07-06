@@ -537,3 +537,19 @@ em {
     font-size: 1.5em;
   }
 }
+
+.new-tag {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: var(--color-secondary);
+  color: white;
+  font-size: 0.55em;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 4px;
+  z-index: 2;
+  text-transform: uppercase;
+  pointer-events: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}

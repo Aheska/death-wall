@@ -4,7 +4,7 @@ const phrasesWithImages = [
   { phrase: "-1 preuve", image: "images/print.png" },
   { phrase: "-1 preuve", image: "images/print.png" },
   { phrase: "-1 preuve", image: "images/print.png" },
-  { phrase: "Photo fantôme obligatoire", image: "images/ghost.png" },
+  { phrase: "Photo fantôme physique obligatoire", image: "images/ghost.png" },
   { phrase: "Os obligatoire", image: "images/bone.png" },
   { phrase: "3 objets baissent d'un tier", image: "images/repairing.png" },
   { phrase: "3 objets baissent d'un tier", image: "images/repairing.png" },
@@ -31,6 +31,7 @@ const phrasesWithImages = [
   { phrase: "+25% de vitesse pour le fantôme", image: "images/speed.png" },
   { phrase: "+25% de vitesse pour le fantôme", image: "images/speed.png" },
   { phrase: "Lumières interdites", image: "images/dark.png" },
+  { phrase: "Photo fantôme translucide obligatoire", image: "images/dark.png", new: true },
 ];
 
 // Liste des défis du tarot et leurs bonus
@@ -39,7 +40,7 @@ const phrasesWithBonus = [
 { phrase: "Vous restez toujours collé ensemble", bonus: "Annulation d'une case au choix" },
 { phrase: "Un seul objet à la fois", bonus: "-1 case au prochain tirage" },
 { phrase: "Toujours fermer la porte derrière soi", bonus: "-1 case au prochain tirage" },
-{ phrase: "Interdiction de te cacher dans la même cachette deux fois", bonus: "-1 case au prochain tirage" },
+{ phrase: "Interdiction de se cacher dans la même cachette deux fois", bonus: "-1 case au prochain tirage" },
 { phrase: "Interdiction de parler au fantôme", bonus: "-1 case au prochain tirage" },
 { phrase: "Tout le monde utilise uniquement les objets du fantôme tiré", bonus: "-2 cases au prochain tirage" },
 { phrase: "Pas d'objets électroniques", bonus: "Annulation d'une case au choix" },
@@ -86,6 +87,13 @@ const gridContainer = document.getElementById("grid");
 for (let i = 0; i < 27; i++) {
   const gridItem = document.createElement('div');
   gridItem.classList.add('grid-item');
+
+  if (phrasesWithImages[i].new) {
+    const newTag = document.createElement('div');
+    newTag.classList.add('new-tag');
+    newTag.innerText = 'Nouveau';
+    gridItem.appendChild(newTag);
+  }
 
   const front = document.createElement('div');
   front.classList.add('front');
