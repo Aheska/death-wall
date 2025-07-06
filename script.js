@@ -95,6 +95,13 @@ for (let i = 0; i < 27; i++) {
   const back = document.createElement('div');
   back.classList.add('back');
 
+  if (phrasesWithImages[i].new) {
+    const newTag = document.createElement('div');
+    newTag.classList.add('new-tag');
+    newTag.innerText = "Nouveau";
+    back.appendChild(newTag);
+  }
+
   const image = document.createElement('img');
   image.src = phrasesWithImages[i].image;
   image.alt = "Image associée à " + phrasesWithImages[i].phrase;
@@ -111,16 +118,9 @@ for (let i = 0; i < 27; i++) {
   back.appendChild(image); 
   back.appendChild(phraseText);
 
-  // Le tag "Nouveau" est ajouté dans la face arrière uniquement
-  if (phrasesWithImages[i].new) {
-    const newTag = document.createElement('div');
-    newTag.classList.add('new-tag');
-    newTag.innerText = 'Nouveau';
-    back.appendChild(newTag);
-  }
-
   gridItem.appendChild(front);
   gridItem.appendChild(back);
+
   gridContainer.appendChild(gridItem);
 }
 
