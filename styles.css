@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  font-family: "Protest Revolution", sans-serif;
+  font-family: 'The Girl Next Door';
   background-color: #111111;
   overflow-x: hidden;
 }
@@ -179,7 +179,7 @@ em {
   color: var(--color-text);
   width: 8em;
   height: 3.5em;
-  font-family: "Protest Revolution", sans-serif;
+  font-family: 'The Girl Next Door';
   font-size: 1em;
   border: none;
 }
